@@ -1,106 +1,130 @@
-# SynAptIp Nyquist Analyzer v1.0
+# SynAptIp Nyquist Analyzer
 
-A desktop scientific tool for impedance analysis using LCR meter data.
+Scientific impedance analysis software for Nyquist and Bode visualization using LCR data.
+
+Version: v1.0.1
+Author: Daniel Ramírez Martínez
+Organization: SynAptIp Technologies
+DOI: https://doi.org/10.5281/zenodo.19105599
+Repository: https://github.com/Tecnodram/synaptip-nyquist-analyzer
+
+---
+
+![App Preview](app_preview.png)
 
 ---
 
 ## Description
 
-SynAptIp Nyquist Analyzer is a standalone GUI application for processing and visualizing impedance spectroscopy data exported from LCR meters. It generates publication-quality Nyquist and Bode plots, provides a live PNG-based preview inside the application, and exports results in ready-to-use formats — all without requiring manual scripting.
+SynAptIp Nyquist Analyzer is a scientific impedance analysis tool designed to process LCR meter CSV data and generate publication-ready Nyquist and Bode plots. It is available as both a lightweight standalone executable and a Python-based application for reproducible analytical workflows.
+
+The software is built for researchers and engineers who require fast and clear impedance visualization for exploratory analysis, experimental validation, and reporting.
 
 ---
 
 ## Features
 
-- CSV and TXT processing from LCR meter exports
-- Nyquist plot generation with automatic axis scaling
-- Bode magnitude and phase plots
-- Scientific visualization with clean, styled output
-- GUI-based workflow — no scripting required
-- PNG-based preview panel for stable, flicker-free display
-- Export-ready outputs (PNG plots + processed CSV)
+- Nyquist plot generation
+- Bode plots (magnitude and phase)
+- Automatic parsing of LCR output files
+- Scientific-style visualization
+- PNG-based preview rendering
+- Local execution (.exe support)
+- Clean and minimal interface
 
 ---
 
-## Project Structure
+## Usage
 
-```text
-SynAptIp-Nyquist-QuickApp/
-├── nyquist_app.py          # Main application
-├── requirements.txt        # Python dependencies
-├── README.md
-├── .gitignore
-├── assets/
-│   ├── SynAptIp-Nyquist.png    # Application logo
-│   └── SynAptIp-Nyquist.ico    # Window and EXE icon
-├── sample_data/
-│   └── example_lcr_data.csv    # Example LCR meter export
-└── screenshots/
-    └── app_preview.png         # Application preview image
-```
+### Run from executable
 
----
+- Download the latest release package from the Releases section.
+- Run the executable directly.
 
-## Requirements
+### Run from source
 
-- Python 3.10 or later
-- Install dependencies:
+1. Install dependencies:
 
-```bash
-pip install -r requirements.txt
-```
+   pip install -r requirements.txt
 
-Dependencies: `pandas`, `matplotlib`, `numpy`, `pillow`
+2. Launch the application:
+
+   python nyquist_app.py
 
 ---
 
-## How to Run Locally
+## Build
 
-```bash
-python nyquist_app.py
-```
+To build the Windows executable from source:
 
-1. Launch the application.
-2. Click **Process File** and select an LCR meter CSV or TXT export.
-3. The tool processes the data and generates Nyquist and Bode plots automatically.
-4. Review the Nyquist preview in the right panel.
-5. Find the exported plots and processed CSV in the output folder next to your source file.
+pyinstaller --clean --name "SynAptIp Nyquist Analyzer v1.0.1" --onefile --windowed --icon assets/SynAptIp-Nyquist.ico --add-data "assets/SynAptIp-Nyquist.png;assets" nyquist_app.py
 
 ---
 
-## How to Build the Executable
+## Scientific Context
 
-Use PyInstaller to create a standalone Windows EXE:
+Impedance spectroscopy is a core method for characterizing frequency-dependent electrical behavior in materials, devices, and electrochemical systems. Nyquist and Bode representations provide complementary views of resistive and reactive responses, supporting model selection and parameter interpretation.
 
-```bash
-pyinstaller --clean --name "SynAptIp Nyquist Analyzer v1.0" --onefile --windowed --icon assets/SynAptIp-Nyquist.ico --add-data "assets/SynAptIp-Nyquist.png;assets" nyquist_app.py
-```
-
-The resulting executable will be located in the `dist/` folder.
+SynAptIp Nyquist Analyzer supports practical analysis workflows for RC circuits and material characterization studies, including use cases in electrochemical and electronic evaluation. The tool is intended to streamline experimental validation workflows by providing rapid visual feedback and standardized plot outputs.
 
 ---
 
-## Version
+## How to Cite
 
-**Version 1.0** — First stable public release.
+Ramírez Martínez, D. (2026). *SynAptIp Nyquist Analyzer (Version 1.0.1)* [Computer software]. SynAptIp Technologies.
+https://doi.org/10.5281/zenodo.19105599
 
-This version delivers a complete, self-contained desktop workflow for LCR impedance data: file input, scientific processing, plot generation, and GUI preview.
+BibTeX:
+
+    @software{ramirez2026synaptip,
+      author = {Ramírez Martínez, Daniel},
+      title = {SynAptIp Nyquist Analyzer},
+      version = {1.0.1},
+      year = {2026},
+      organization = {SynAptIp Technologies},
+      doi = {10.5281/zenodo.19105599}
+    }
+
+---
+
+## License
+
+All rights reserved.
+This software is proprietary. Commercial use requires permission from the author.
+
+---
+
+## Disclaimer
+
+This software was developed independently by the author and is not affiliated with any laboratory, institution, or organization where testing or validation may have occurred.
+
+All data used for demonstration and validation is generic and does not represent proprietary or institutional datasets.
+
+---
+
+## About SynAptIp Technologies
+
+SynAptIp Technologies is an emerging innovation lab focused on:
+
+- Artificial Intelligence
+- Scientific Software Development
+- Environmental Data Science
+- Hardware + Software Integration
+- Sustainability-driven technology
+
+---
+
+## Author
+
+Daniel Ramírez Martínez
+Founder — SynAptIp Technologies
 
 ---
 
 ## Roadmap
 
-Planned improvements for future versions:
-
-- Multi-mode LCR interpretation (series / parallel circuit models)
-- Automated circuit behavior suggestions based on impedance profile
-- Equivalent circuit fitting
-- Advanced impedance modeling (Randles cell, CPE elements)
-- Premium scientific reporting (PDF export)
-- Batch processing for multiple files
-
----
-
-## Screenshot
-
-![Application Preview](screenshots/app_preview.png)
+- Advanced impedance modeling
+- ZView/Gamry-like interface
+- Automated parameter fitting
+- Batch processing
+- Scientific reporting tools
