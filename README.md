@@ -10,7 +10,11 @@ Repository: https://github.com/Tecnodram/synaptip-nyquist-analyzer
 
 ---
 
-![App Preview](app_preview.png)
+<p align="center">
+   <img src="screenshots/app_preview.png" width="700"/>
+</p>
+
+<p align="center"><em>SynAptIp Nyquist Analyzer - Scientific Impedance Visualization Interface</em></p>
 
 ---
 
